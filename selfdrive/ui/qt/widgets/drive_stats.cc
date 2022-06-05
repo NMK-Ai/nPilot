@@ -41,9 +41,9 @@ DriveStats::DriveStats(QWidget* parent) : QFrame(parent) {
     main_layout->addLayout(grid_layout);
   };
 
-  add_stats_layouts("ALL TIME", all_);
+  add_stats_layouts("جميع الأوقات", all_);
   main_layout->addStretch();
-  add_stats_layouts("PAST WEEK", week_);
+  add_stats_layouts("الاسبوع الماضي", week_);
 
   /*if (auto dongleId = getDongleId()) {
     QString url = "https://api.commadotai.com/v1.1/devices/" + *dongleId + "/stats";
@@ -65,10 +65,10 @@ DriveStats::DriveStats(QWidget* parent) : QFrame(parent) {
 
 void DriveStats::updateStats() {
   auto update = [=](const QJsonObject& obj, StatsLabels& labels) {
-    labels.routes->setText(QString::number((int)obj["routes"].toDouble()));
-    labels.distance->setText(QString::number(int(obj["distance"].toDouble() * (metric_ ? MILE_TO_KM : 1))));
+    labels.routes->setText(QString::number((int)obj["الطريق"].toDouble()));
+    labels.distance->setText(QString::number(int(obj["المسافة"].toDouble() * (metric_ ? MILE_TO_KM : 1))));
     labels.distance_unit->setText(getDistanceUnit());
-    labels.hours->setText(QString::number((int)(obj["minutes"].toDouble() / 60)));
+    labels.hours->setText(QString::number((int)(obj["دقيقة"].toDouble() / 60)));
   };
 
   QJsonObject json = stats_.object();
