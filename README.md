@@ -1,40 +1,40 @@
 
-**This is based on xx979xx for Hyundai, Kia, Genesis.**
+**هذه الملفات مبنية من المهندس أحمد برناوي وفريقه (ناصر الخالدي - ثامر الحميد) لتطوير أنظمة القيادة لهيونداي , كيا , جينسس**
 
 https://github.com/xx979xx/openpilot
 
-It is open source and inherits MIT license.  By installing this software you accept all responsibility for anything that might occur while you use it.  All contributors to this fork are not liable.  <b>Use at your own risk.</b>
+إنه مفتوح المصدر ومرخص من معهد ماساتشوستس للتكنولوجيا. بتثبيت هذا البرنامج ، فإنك تتحمل كامل المسؤولية عن أي شيء قد يحدث أثناء استخدامه. جميع المساهمين في هذه الشركة غير مسؤولين. استخدمه على مسؤوليتك الخاصة  <b>استخدام على مسؤوليتك الخاصة.</b>
 
 
 ------------------------------------------------------
 
 
-![](https://i.imgur.com/b0ZyIx5.jpg)
+![](https://i.imgur.com/JVj5aZc.jpg)
 
-Table of Contents
+جدول المحتويات
 =======================
 
-* [What is openpilot?](#what-is-openpilot)
-* [Running in a car](#running-in-a-car)
-* [Running on PC](#running-on-pc)
-* [Community and Contributing](#community-and-contributing)
-* [User Data and comma Account](#user-data-and-comma-account)
-* [Safety and Testing](#safety-and-testing)
-* [Directory Structure](#directory-structure)
-* [Licensing](#licensing)
+* [ماهو الأوبن بايلوت؟](#ماهو-الأوبن-بايلوت؟)
+* [عمله على السيارة](#running-in-a-car)
+* [عمله على الكمبيوتر](#running-on-pc)
+* [المجتمع والمساهمة](#community-and-contributing)
+* [بينانات المسخدم وحساب كوما](#user-data-and-comma-account)
+* [السلامة والاختبار](#safety-and-testing)
+* [بنية الدليل](#directory-structure)
+* [الترخيص](#licensing)
 
 ---
 
-What is openpilot?
+ماهو الأوبن بايلوت ؟
 ------
 
-[openpilot](http://github.com/commaai/openpilot) is an open source driver assistance system. Currently, openpilot performs the functions of Adaptive Cruise Control (ACC), Automated Lane Centering (ALC), Forward Collision Warning (FCW) and Lane Departure Warning (LDW) for a growing variety of [supported car makes, models and model years](docs/CARS.md). In addition, while openpilot is engaged, a camera based Driver Monitoring (DM) feature alerts distracted and asleep drivers. See more about [the vehicle integration](docs/INTEGRATION.md) and [limitations](docs/LIMITATIONS.md).
+[القائد الآلي](http://github.com/commaai/openpilot) هو نظام مفتوح المصدر لمساعدة السائق. حاليًا ، يؤدي برنامج القائد الآلي وظائف التحكم التكيفي في القيادة (ACC) ، وتمركز المسار الآلي (ALC) ، والتحذير من الاصطدام الأمامي (FCW) ، والتحذير من مغادرة المسار (LDW) لمجموعة متزايدة من [السيارات المدعومة والموديلات الحديثة كل عام](docs/CARS.md). بالإضافة أثناء تشغيل الأوبن بايلوت , تعمل كاميرا مراقبة السائق (DM) على مراقبة السائق المشتت الإنتباه والنائم أثناء عمل النظام. لمزيد من المعلومات [ تكامل المركبة ](docs/INTEGRATION.md) و [محدودية](docs/LIMITATIONS.md).
 
 <table>
   <tr>
-    <td><a href="https://youtu.be/NmBfgOanCyk" title="Video By Greer Viau"><img src="https://i.imgur.com/1w8c6d2.jpg"></a></td>
-    <td><a href="https://youtu.be/VHKyqZ7t8Gw" title="Video By Logan LeGrand"><img src="https://i.imgur.com/LnBucik.jpg"></a></td>
-    <td><a href="https://youtu.be/VxiR4iyBruo" title="Video By Charlie Kim"><img src="https://i.imgur.com/4Qoy48c.jpg"></a></td>
+    <td><a href="https://youtu.be/Asq9IBZ5EL8" title="Video By Greer Viau"><img src="https://i.imgur.com/1aVz6fu.png"></a></td>
+    <td><a href="https://youtu.be/YfMKV0BCS3E" title="Video By Logan LeGrand"><img src="https://i.imgur.com/U2kBp1r.jpg"></a></td>
+    <td><a href="https://youtu.be/fE3jcvNPKuU" title="Video By Charlie Kim"><img src="https://i.imgur.com/PInrzIG.jpg"></a></td>
     <td><a href="https://youtu.be/-IkImTe1NYE" title="Video By Aragon"><img src="https://i.imgur.com/04VNzPf.jpg"></a></td>
   </tr>
   <tr>
@@ -45,102 +45,100 @@ What is openpilot?
   </tr>
 </table>
 
-
-Running in a car
+عمله على السيارة
 ------
 
-To use openpilot in a car, you need four things
-* This software. It's free and available right here.
-* One of [the 150+ supported cars](docs/CARS.md). We support Honda, Toyota, Hyundai, Nissan, Kia, Chrysler, Lexus, Acura, Audi, VW, and more. If your car is not supported, but has adaptive cruise control and lane keeping assist, it's likely able to run openpilot.
-* A supported device to run this software. This can be a [comma two](https://comma.ai/shop/products/two), [comma three](https://comma.ai/shop/products/three), or if you like to experiment, a [Ubuntu computer with webcams](https://github.com/commaai/openpilot/tree/master/tools/webcam).
-* A way to connect to your car. With a comma two or three, you need only a [car harness](https://comma.ai/shop/products/car-harness). With an EON Gold or PC, you also need a [black panda](https://comma.ai/shop/products/panda).
+لاستخدام نظام الاوبن بايلوت تحتاج إلى أربعة أشياء
+* هذا البرنامج إنه مجاني ومتاح هنا.
+* إحدى[ أكثر من 150 سيارة مدعومة ](docs/CARS.md). نحن ندعم هوندا, تويوتا ، هيونداي ، نيسان ، كيا ، كرايسلر ، لكزس ، أكورا ، أودي ، فولكس فاجن ، وأكثر من ذلك. إذا كانت سيارتك غير مدعومة, ولاكن يجب أن يكون لديك نظام مثبت السرعة التكيفي ومساعد الحفاظ على المسار لكي تستطيع تشغيل نظام الاوبن بايلوت على مركبتك
+* الجهاز يدهم تشعيل البرنامج [كوما ثلاثة](https://comma.ai/shop/products/two), [كوما ثلاثة](https://comma.ai/shop/products/three), أو إذا كنت ترغب في التجربة, a [كمبيوتر أوبونتو مع كاميرات الويب](https://github.com/commaai/openpilot/tree/master/tools/webcam).
+* طريقة للاتصال بسيارتك. باستخدام كوما اثنين أو ثلاثة ، تحتاج فقط إلى ملف [ظفيرة السيارة](https://comma.ai/shop/products/car-harness). مع الايون الذهبي أو الكمبيوتر الشخصي ، تحتاج أيضًا إلى ملف [البلاك باندا](https://comma.ai/shop/products/panda).
 
-We have detailed instructions for [how to install the device in a car](https://comma.ai/setup).
+لدينا تعليمات مفصلة عن [كيفية تركيب الجهاز في السيارة](https://comma.ai/setup).
 
-Running on PC
+عمله على الكمبيوتر
 ------
 
-All of openpilot's services can run as normal on a PC, even without special hardware or a car. To develop or experiment with openpilot you can run openpilot on recorded or simulated data.
+يمكن تشغيل جميع خدمات القائد الآلي كالمعتاد على جهاز كمبيوتر ، حتى بدون أجهزة خاصة أو سيارة. لتطوير أو تجربة القائد الآلي ، يمكنك تشغيل القائد الآلي على بيانات مسجلة أو محاكاة.
 
-With openpilot's tools you can plot logs, replay drives and watch the full-res camera streams. See [the tools README](tools/README.md) for more information.
+باستخدام أدوات القائد الآلي ، يمكنك رسم السجلات وإعادة تشغيل محركات الأقراص ومشاهدة تدفقات الكاميرا كاملة الدقة. يرى [the tools README](tools/README.md) للمزيد من المعلومات.
 
-You can also run openpilot in simulation [with the CARLA simulator](tools/sim/README.md). This allows openpilot to drive around a virtual car on your Ubuntu machine. The whole setup should only take a few minutes, but does require a decent GPU.
+يمكنك أيضًا تشغيل القائد الآلي في المحاكاة [مع محاكي كلارا](tools/sim/README.md). هذا يسمح لبرنامج القائد الآلي بالقيادة حول سيارة افتراضية على جهاز نظام يوبينتو الخاص بك. يجب أن يستغرق الإعداد بالكامل بضع دقائق فقط ، ولكنه يتطلب وحدة معالجة رسومات جيدة.
 
 
-Community and Contributing
+المجتمع والمساهمة
 ------
 
-openpilot is developed by [comma](https://comma.ai/) and by users like you. We welcome both pull requests and issues on [GitHub](http://github.com/commaai/openpilot). Bug fixes and new car ports are encouraged. Check out [the contributing docs](docs/CONTRIBUTING.md).
+تم تطوير برنامج القائد الآلي بواسطة [كوما](https://comma.ai/) ومن قبل مستخدمين مثلك. نرحب بكل من طلبات الحل والإصلاح [جت هب](http://github.com/commaai/openpilot). يتم تشجيع إصلاحات الأخطاء ومنافذ السيارات الجديدة. التحديث [المستندات المساهمة](docs/CONTRIBUTING.md).
 
-Documentation related to openpilot development can be found on [docs.comma.ai](https://docs.comma.ai). Information about running openpilot (e.g. FAQ, fingerprinting, troubleshooting, custom forks, community hardware) should go on the [wiki](https://github.com/commaai/openpilot/wiki).
+يمكن العثور على الوثائق المتعلقة بتطوير القائد الآلي على [docs.comma.ai](https://docs.comma.ai). معلومات حول تشغيل برنامج القائد الآلي (e.g. FAQ, fingerprinting, troubleshooting, custom forks, community hardware) يجل أن تكون على [ويكي](https://github.com/commaai/openpilot/wiki).
 
-You can add support for your car by following guides we have written for [Brand](https://blog.comma.ai/how-to-write-a-car-port-for-openpilot/) and [Model](https://blog.comma.ai/openpilot-port-guide-for-toyota-models/) ports. Generally, a car with adaptive cruise control and lane keep assist is a good candidate. [Join our Discord](https://discord.comma.ai) to discuss car ports: most car makes have a dedicated channel.
+يمكنك إضافة دعم لسيارتك باتباع الإرشادات التي كتبنا عنها [ماركة](https://blog.comma.ai/how-to-write-a-car-port-for-openpilot/) and [الموديل](https://blog.comma.ai/openpilot-port-guide-for-toyota-models/) المنافذ. بشكل عام ، تعتبر السيارة المزودة بنظام تثبيت السرعة التكيفي ونظام المساعدة في الحفاظ على المسار مرشحًا جيدًا. [انضم إلى الديسكورد](https://discord.comma.ai) لمناقشة منافذ السيارات: معظم ماركات السيارات لديها قناة مخصصة.
 
-Want to get paid to work on openpilot? [comma is hiring](https://comma.ai/jobs/).
+تريد الحصول على أجر للعمل على القائد الآلي [كوما تقوم بالتوظيف](https://comma.ai/jobs/).
 
-And [follow us on Twitter](https://twitter.com/comma_ai).
+و [تابعنا على تويتر](https://twitter.com/comma_ai).
 
-User Data and comma Account
+بينانات المسخدم وحساب كوما
 ------
 
-By default, openpilot uploads the driving data to our servers. You can also access your data through [comma connect](https://connect.comma.ai/). We use your data to train better models and improve openpilot for everyone.
+بشكل افتراضي ، يقوم برنامج القائد الآلي بتحميل بيانات القيادة إلى خوادمنا. يمكنك أيضًا الوصول إلى بياناتك من خلال [اتصال كوما](https://connect.comma.ai/). نستخدم بياناتك لتدريب نماذج أفضل وتحسين القائد الآلي للجميع.
 
-openpilot is open source software: the user is free to disable data collection if they wish to do so.
+القائد اللآلي هو برنامج مفتوح المصدر: للمستخدم حرية تعطيل جمع البيانات إذا كان يرغب في ذلك.
 
-openpilot logs the road facing cameras, CAN, GPS, IMU, magnetometer, thermal sensors, crashes, and operating system logs.
-The driver facing camera is only logged if you explicitly opt-in in settings. The microphone is not recorded.
+يسجل برنامج القائد الآلي الكاميرات المواجهة للطريق و الكان و نظام تحديد المواقع العالمي و تشمل تحديد الاتجاه ومقياس المغناطيسية وأجهزة الاستشعار الحرارية والأعطال وسجلات نظام التشغيل.
+يتم تسجيل الكاميرا المواجهة للسائق فقط إذا قمت صراحة بالاشتراك في الإعدادات. لم يتم تسجيل الميكروفون.
 
-By using openpilot, you agree to [our Privacy Policy](https://comma.ai/privacy). You understand that use of this software or its related services will generate certain types of user data, which may be logged and stored at the sole discretion of comma. By accepting this agreement, you grant an irrevocable, perpetual, worldwide right to comma for the use of this data.
+باستخدام برنامج القائد الآلي ، فإنك توافق على [سياسة الخصوصية الخاصة بنا](https://comma.ai/privacy). أنت تدرك أن استخدام هذا البرنامج أو الخدمات المرتبطة به سيؤدي إلى إنشاء أنواع معينة من بيانات المستخدم ، والتي قد يتم تسجيلها وتخزينها وفقًا لتقدير كوما وحدها. بقبول هذه الاتفاقية, أنت تمنح حقًا عالميًا غير قابل للإلغاء ودائم لفاصلة لاستخدام هذه البيانات.
 
-Safety and Testing
+السلامة والاختبار
 ----
 
-* openpilot observes ISO26262 guidelines, see [SAFETY.md](docs/SAFETY.md) for more details.
-* openpilot has software in the loop [tests](.github/workflows/selfdrive_tests.yaml) that run on every commit.
-* The code enforcing the safety model lives in panda and is written in C, see [code rigor](https://github.com/commaai/panda#code-rigor) for more details.
-* panda has software in the loop [safety tests](https://github.com/commaai/panda/tree/master/tests/safety).
-* Internally, we have a hardware in the loop Jenkins test suite that builds and unit tests the various processes.
-* panda has additional hardware in the loop [tests](https://github.com/commaai/panda/blob/master/Jenkinsfile).
-* We run the latest openpilot in a testing closet containing 10 comma devices continuously replaying routes.
+* القائد الآلي يراعي إرشادات ISO26262 ، انظر [السلامة](docs/SAFETY.md) لمزيد من التفاصيل.
+* يحتوي برنامج القائد الآلي على برنامج في عقدة [الاختبارات](.github/workflows/selfdrive_tests.yaml) التي تعمل على كل التزام.
+* الكود الذي يفرض تطبيق نموذج الأمان يعيش في الباندا ومكتوب بلغة C ، انظر [دقة كود](https://github.com/commaai/panda#code-rigor) لمزيد من التفاصيل.
+* الباندا لديه برنامج في عقدة [اختبارات السلامة](https://github.com/commaai/panda/tree/master/tests/safety).
+* داخليًا ، لدينا جهاز في مجموعة اختبار عقدة مسمترة الذي يبني العمليات المختلفة ويختبرها.
+* الباندا لديها أجهزة إضافية في العقدة [الاختبارات](https://github.com/commaai/panda/blob/master/Jenkinsfile).
+* نقوم بتشغيل أحدث برنامج القائد الآلي في خزانة اختبار تحتوي على 10 أجهزة كوما تعيد تشغيل المسارات باستمرار.
 
-Directory Structure
+بنية الدليل
 ------
     .
-    ├── cereal              # The messaging spec and libs used for all logs
-    ├── common              # Library like functionality we've developed here
-    ├── docs                # Documentation
-    ├── opendbc             # Files showing how to interpret data from cars
-    ├── panda               # Code used to communicate on CAN
-    ├── third_party         # External libraries
-    ├── pyextra             # Extra python packages
-    └── selfdrive           # Code needed to drive the car
-        ├── assets          # Fonts, images, and sounds for UI
-        ├── athena          # Allows communication with the app
-        ├── boardd          # Daemon to talk to the board
-        ├── camerad         # Driver to capture images from the camera sensors
-        ├── car             # Car specific code to read states and control actuators
-        ├── common          # Shared C/C++ code for the daemons
-        ├── controls        # Planning and controls
-        ├── debug           # Tools to help you debug and do car ports
-        ├── locationd       # Precise localization and vehicle parameter estimation
-        ├── logcatd         # Android logcat as a service
-        ├── loggerd         # Logger and uploader of car data
-        ├── modeld          # Driving and monitoring model runners
-        ├── proclogd        # Logs information from proc
-        ├── sensord         # IMU interface code
-        ├── test            # Unit tests, system tests, and a car simulator
-        └── ui              # The UI
+    ├── cereal              # مواصفات الرسائل و الطبقات المستخدمة في جميع الخوارزميات
+    ├── common              # مكتبة مثل الوظائف التي قمنا بتطويرها هنا
+    ├── docs                # التوثيق
+    ├── opendbc             # ملفات توضح كيفية تفسير البيانات من السيارات
+    ├── panda               # رمز يستخدم للتواصل على الكان
+    ├── third_party         # مكتبات خارجية
+    ├── pyextra             # حزم بايثون الإضافية
+    └── selfdrive           # الأكواد المطلوبة لقيادة السيارة
+        ├── assets          # الخطوط, الصور, و الأصوات للواجهة
+        ├── athena          # يسمح بالتواصل مع التطبيق
+        ├── boardd          # الديمون الذي يسمح للاتصال مع البورد
+        ├── camerad         # يسمح لالتقاط الصور من مستشعرات الكاميرا
+        ├── car             # رمز السيارة المحدد لقراءة الحالات والتحكم في المشغلات
+        ├── common          # كود C / C ++ مشترك الدومين
+        ├── controls        # التخطيط والضوابط
+        ├── debug           # أدوات لمساعدتك على التصحيح والقيام بمنافذ السيارة
+        ├── locationd       # توطين دقيق وتقدير معايرة السيارة
+        ├── logcatd         # ملفات الأندرويد والخدمات
+        ├── loggerd         # مسجل وتحميل بيانات السيارة
+        ├── modeld          # نظام مراقبة القيادة أثناء العمل
+        ├── proclogd        # معلومات السجلات من proc
+        ├── sensord         # رمز واجهة تحديد الاتجاه
+        ├── test            # اختبارات الوحدة واختبارات النظام وجهاز محاكاة السيارة
+        └── ui              # واجهة المستخدم
 
-Licensing
+الترخيص
 ------
 
-openpilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
+تم إصدار القائد الآلي بموجب ترخيص MIT. تم إصدار بعض أجزاء البرنامج بموجب تراخيص أخرى كما هو محدد.
+يجب على أي مستخدم لهذا البرنامج تعويض كوما للذكاء الاصطناهي. ومديريها ومسؤوليها وموظفيها ووكلائها وحاملي الأسهم والشركات التابعة لها والمقاولين من الباطن والعملاء وضد جميع الادعاءات والمطالبات والإجراءات والدعاوى والمطالب والأضرار والمسؤوليات. والالتزامات والخسائر والتسويات والأحكام والتكاليف والنفقات (بما في ذلك على سبيل المثال لا الحصر أتعاب المحاماة والتكاليف) التي تنشأ عن أو تتعلق أو تنتج عن أي استخدام لهذا البرنامج من قبل المستخدم.
 
-Any user of this software shall indemnify and hold harmless Comma.ai, Inc. and its directors, officers, employees, agents, stockholders, affiliates, subcontractors and customers from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by user.
-
-**THIS IS ALPHA QUALITY SOFTWARE FOR RESEARCH PURPOSES ONLY. THIS IS NOT A PRODUCT.
-YOU ARE RESPONSIBLE FOR COMPLYING WITH LOCAL LAWS AND REGULATIONS.
-NO WARRANTY EXPRESSED OR IMPLIED.**
+**هذا هو برنامج ألفا عالي الجودة لأغراض البحث فقط. هذا ليس منتج.
+أنت مسؤول عن الامتثال للقوانين واللوائح المحلية.
+لا صراحة أو ضمنا الضمان.**
 
 ---
 
