@@ -37,51 +37,51 @@ TogglesPanel::TogglesPanel(SettingsWindow *parent) : ListWidget(parent) {
   std::vector<std::tuple<QString, QString, QString, QString>> toggles{
     {
       "OpenpilotEnabledToggle",
-      "Enable openpilot",
-      "Use the openpilot system for adaptive cruise control and lane keep driver assistance. Your attention is required at all times to use this feature. Changing this setting takes effect when the car is powered off.",
+      "تفعيل القائد الآلي",
+      "استخدم نظام القائد الآلي للتحكم التكيفي في ثبات السرعة ومسار الحفاظ على مساعدة السائق. انتباهك مطلوب في جميع الأوقات لاستخدام هذه الميزة. يسري تغيير هذا الإعداد عند إيقاف تشغيل السيارة.",
       "../assets/offroad/icon_openpilot.png",
     },
     {
       "IsLdwEnabled",
-      "Enable Lane Departure Warnings",
-      "Receive alerts to steer back into the lane when your vehicle drifts over a detected lane line without a turn signal activated while driving over 31 mph (50 km/h).",
+      "تفعيل نظام التحذير عن الخروج من المسار",
+      "تلقي تنبيهات للتوجيه مرة أخرى إلى الحارة عندما تنجرف سيارتك فوق خط المسار المكتشف دون تنشيط إشارة الانعطاف أثناء القيادة لمسافة تزيد عن 6 ميلاً في الساعة (10 كم / ساعة).",
       "../assets/offroad/icon_warning.png",
     },
     {
       "IsRHD",
-      "Enable Right-Hand Drive",
-      "Allow openpilot to obey left-hand traffic conventions and perform driver monitoring on right driver seat.",
+      "تفعيل التحكم باليد اليمنى للسائق",
+      "اسمح للقائد الآلي بالانصياع لاتفاقيات المرور اليسرى وإجراء مراقبة للسائق على مقعد السائق الأيمن.",
       "../assets/offroad/icon_openpilot_mirrored.png",
     },
     {
       "IsMetric",
-      "Use Metric System",
-      "Display speed in km/h instead of mph.",
+      "استخدم النظام المتري",
+      "اسمح للقائد الآلي بالانصياع لاتفاقيات المرور اليسرى وإجراء مراقبة للسائق على مقعد السائق الأيمن.",
       "../assets/offroad/icon_metric.png",
     },
     {
       "RecordFront",
-      "Record and Upload Driver Camera",
-      "Upload data from the driver facing camera and help improve the driver monitoring algorithm.",
+      "تسجيل وتحميل كاميرا السائق",
+      "قم بتحميل البيانات من الكاميرا المواجهة للسائق وساعد في تحسين خوارزمية مراقبة السائق.",
       "../assets/offroad/icon_monitoring.png",
     },
     {
       "EndToEndToggle",
-      "\U0001f96c Disable use of lanelines (Alpha) \U0001f96c",
-      "In this mode openpilot will ignore lanelines and just drive how it thinks a human would.",
+      "\U0001f96c تعطيل استخدام الخطوط المضيئة (ألفا) \U0001f96c",
+      "في هذا الوضع ، سيتجاهل القائد الآلي الخطوط السفلية ويدفع فقط كيف يفكر الإنسان.",
       "../assets/offroad/icon_road.png",
     },
     {
       "DisengageOnAccelerator",
-      "Disengage On Accelerator Pedal",
-      "When enabled, pressing the accelerator pedal will disengage openpilot.",
+      "فك الارتباط على دواسة الوقود",
+      "عند التمكين ، سيؤدي الضغط على دواسة الوقود إلى فصل القائد الآلي.",
       "../assets/offroad/icon_disengage_on_accelerator.svg",
     },
 #ifdef ENABLE_MAPS
     {
       "NavSettingTime24h",
-      "Show ETA in 24h format",
-      "Use 24h format instead of am/pm",
+      "إظهار الوقت المقدر للوصول بتنسيق 24 ساعة",
+      "استخدم تنسيق 24 ساعة بدلاً من صباحًا / مساءً",
       "../assets/offroad/icon_metric.png",
     },
 #endif
@@ -93,8 +93,8 @@ TogglesPanel::TogglesPanel(SettingsWindow *parent) : ListWidget(parent) {
   if (params.getBool("DisableRadar_Allow")) {
     toggles.push_back({
       "DisableRadar",
-      "openpilot Longitudinal Control",
-      "openpilot will disable the car's radar and will take over control of gas and brakes. Warning: this disables AEB!",
+      "القائد الآلي التحكم الطولي",
+      "سوف يقوم برنامج القائد الآلي بتعطيل رادار السيارة وسيتولى التحكم في عجلة الوقود والمكابح. تحذير: هذا يعطل فرملة الطوارئ!",
       "../assets/offroad/icon_speed_limit.png",
     });
   }
@@ -112,14 +112,14 @@ TogglesPanel::TogglesPanel(SettingsWindow *parent) : ListWidget(parent) {
 
 DevicePanel::DevicePanel(SettingsWindow *parent) : ListWidget(parent) {
   setSpacing(50);
-  addItem(new LabelControl("Dongle ID", getDongleId().value_or("N/A")));
-  addItem(new LabelControl("Serial", params.get("HardwareSerial").c_str()));
+  addItem(new LabelControl("رقم الجهاز", getDongleId().value_or("ecf7da248ab26cfc")));
+  addItem(new LabelControl("رقم التسلسل", params.get("HardwareSerial").c_str()));
 
   QHBoxLayout *reset_layout = new QHBoxLayout();
   reset_layout->setSpacing(30);
 
   // reset calibration button
-  QPushButton *restart_openpilot_btn = new QPushButton("Soft restart");
+  QPushButton *restart_openpilot_btn = new QPushButton("إعادة تشغيل لينة");
   restart_openpilot_btn->setStyleSheet("height: 120px;border-radius: 15px;background-color: #393939;");
   reset_layout->addWidget(restart_openpilot_btn);
   QObject::connect(restart_openpilot_btn, &QPushButton::released, [=]() {
@@ -130,11 +130,11 @@ DevicePanel::DevicePanel(SettingsWindow *parent) : ListWidget(parent) {
   });
 
   // reset calibration button
-  QPushButton *reset_calib_btn = new QPushButton("Reset Calibration");
+  QPushButton *reset_calib_btn = new QPushButton("إعادة ضبط المعايرة");
   reset_calib_btn->setStyleSheet("height: 120px;border-radius: 15px;background-color: #393939;");
   reset_layout->addWidget(reset_calib_btn);
   QObject::connect(reset_calib_btn, &QPushButton::released, [=]() {
-    if (ConfirmationDialog::confirm("Are you sure you want to reset calibration and live params?", this)) {
+    if (ConfirmationDialog::confirm("هل أنت متأكد أنك تريد إعادة ضبط المعايرة والرؤية الحية؟", this)) {
       Params().remove("CalibrationParams");
       Params().remove("LiveParameters");
       emit closeSettings();
@@ -148,32 +148,32 @@ DevicePanel::DevicePanel(SettingsWindow *parent) : ListWidget(parent) {
 
   // offroad-only buttons
 
-  auto dcamBtn = new ButtonControl("Driver Camera", "PREVIEW",
-                                   "Preview the driver facing camera to help optimize device mounting position for best driver monitoring experience. (vehicle must be off)");
+  auto dcamBtn = new ButtonControl("كاميرا السائق", "عرض",
+                                   "قم بمعاينة الكاميرا المواجهة للسائق للمساعدة في تحسين موضع تثبيت الجهاز للحصول على أفضل تجربة مراقبة للسائق. (يجب أن تكون السيارة مطفأة)");
   connect(dcamBtn, &ButtonControl::clicked, [=]() { emit showDriverView(); });
   addItem(dcamBtn);
 
-  auto resetCalibBtn = new ButtonControl("Reset Calibration", "RESET", " ");
+  auto resetCalibBtn = new ButtonControl("إعادة المعايرة", "إعادة تعيين", " ");
   connect(resetCalibBtn, &ButtonControl::showDescription, this, &DevicePanel::updateCalibDescription);
   connect(resetCalibBtn, &ButtonControl::clicked, [&]() {
-    if (ConfirmationDialog::confirm("Are you sure you want to reset calibration?", this)) {
+    if (ConfirmationDialog::confirm("هل أنت متأكد أنك تريد إعادة ضبط المعايرة؟", this)) {
       params.remove("CalibrationParams");
     }
   });
   addItem(resetCalibBtn);
 
   if (!params.getBool("Passive")) {
-    auto retrainingBtn = new ButtonControl("Review Training Guide", "REVIEW", "Review the rules, features, and limitations of openpilot");
+    auto retrainingBtn = new ButtonControl("مراجعة دليل التدريب", "استعراض", "راجع القواعد, الميزات, والحدود في القائد الآلي");
     connect(retrainingBtn, &ButtonControl::clicked, [=]() {
-      if (ConfirmationDialog::confirm("Are you sure you want to review the training guide?", this)) {
+      if (ConfirmationDialog::confirm("هل أنت متأكد أنك تريد مراجعة دليل التدريب؟", this)) {
         emit reviewTrainingGuide();
       }
     });
     addItem(retrainingBtn);
   }
 
-  if (Hardware::TICI()) {
-    auto regulatoryBtn = new ButtonControl("Regulatory", "VIEW", "");
+if (Hardware::TICI()) {
+    auto regulatoryBtn = new ButtonControl("تنظيمية", "عرض", "");
     connect(regulatoryBtn, &ButtonControl::clicked, [=]() {
       const std::string txt = util::read_file("../assets/offroad/fcc.html");
       RichTextDialog::alert(QString::fromStdString(txt), this);
@@ -191,12 +191,12 @@ DevicePanel::DevicePanel(SettingsWindow *parent) : ListWidget(parent) {
   QHBoxLayout *power_layout = new QHBoxLayout();
   power_layout->setSpacing(30);
 
-  QPushButton *reboot_btn = new QPushButton("Reboot");
+  QPushButton *reboot_btn = new QPushButton("اعادة التشغيل");
   reboot_btn->setObjectName("reboot_btn");
   power_layout->addWidget(reboot_btn);
   QObject::connect(reboot_btn, &QPushButton::clicked, this, &DevicePanel::reboot);
 
-  QPushButton *rebuild_btn = new QPushButton("Rebuild");
+  QPushButton *rebuild_btn = new QPushButton("إعادة بناء البرنامج");
   rebuild_btn->setObjectName("rebuild_btn");
   power_layout->addWidget(rebuild_btn);
   QObject::connect(rebuild_btn, &QPushButton::clicked, [=]() {
@@ -213,7 +213,7 @@ DevicePanel::DevicePanel(SettingsWindow *parent) : ListWidget(parent) {
     }
   });
 
-  QPushButton *poweroff_btn = new QPushButton("Power Off");
+  QPushButton *poweroff_btn = new QPushButton("إطفاء");
   poweroff_btn->setObjectName("poweroff_btn");
   power_layout->addWidget(poweroff_btn);
   QObject::connect(poweroff_btn, &QPushButton::clicked, this, &DevicePanel::poweroff);
@@ -234,9 +234,9 @@ DevicePanel::DevicePanel(SettingsWindow *parent) : ListWidget(parent) {
 }
 
 void DevicePanel::updateCalibDescription() {
-  QString desc =
-      "openpilot requires the device to be mounted within 4° left or right and "
-      "within 5° up or 8° down. openpilot is continuously calibrating, resetting is rarely required.";
+ QString desc =
+      "يتطلب القائد الآلي أن يتم تركيب الجهاز في حدود 4 درجات يسارًا أو يمينًا و"
+      "في غضون 5 درجات لأعلى أو 8 درجات لأسفل. يقوم برنامج الفائد الآلي بالمعايرة بشكل مستمر ، ونادراً ما تكون هناك حاجة لإعادة الضبط.";
   std::string calib_bytes = Params().get("CalibrationParams");
   if (!calib_bytes.empty()) {
     try {
@@ -259,51 +259,51 @@ void DevicePanel::updateCalibDescription() {
 
 void DevicePanel::reboot() {
   if (!uiState()->engaged()) {
-    if (ConfirmationDialog::confirm("Are you sure you want to reboot?", this)) {
+    if (ConfirmationDialog::confirm("هل أنت متأكد أنك تريد إعادة التشغيل؟", this)) {
       // Check engaged again in case it changed while the dialog was open
       if (!uiState()->engaged()) {
         Params().putBool("DoReboot", true);
       }
     }
   } else {
-    ConfirmationDialog::alert("Disengage to Reboot", this);
+    ConfirmationDialog::alert("فك الارتباط لإعادة التشغيل", this);
   }
 }
 
 void DevicePanel::poweroff() {
   if (!uiState()->engaged()) {
-    if (ConfirmationDialog::confirm("Are you sure you want to power off?", this)) {
+    if (ConfirmationDialog::confirm("هل أنت متأكد أنك تريد إيقاف التشغيل؟", this)) {
       // Check engaged again in case it changed while the dialog was open
       if (!uiState()->engaged()) {
         Params().putBool("DoShutdown", true);
       }
     }
   } else {
-    ConfirmationDialog::alert("Disengage to Power Off", this);
+    ConfirmationDialog::alert("فك الارتباط لإيقاف التشغيل", this);
   }
 }
 
 SoftwarePanel::SoftwarePanel(QWidget* parent) : ListWidget(parent) {
-  gitBranchLbl = new LabelControl("Git Branch");
-  gitCommitLbl = new LabelControl("Git Commit");
-  osVersionLbl = new LabelControl("OS Version");
-  versionLbl = new LabelControl("Version", "", QString::fromStdString(params.get("ReleaseNotes")).trimmed());
-  lastUpdateLbl = new LabelControl("Last Update Check", "", "The last time openpilot successfully checked for an update. The updater only runs while the car is off.");
-  updateBtn = new ButtonControl("Check for Update", "");
+  gitBranchLbl = new LabelControl("الفرع البرمجي");
+  gitCommitLbl = new LabelControl("رقم آخر تحديث");
+  osVersionLbl = new LabelControl("إصدار نظام التشغيل");
+  versionLbl = new LabelControl("الإصدار", "", QString::fromStdString(params.get("ReleaseNotes")).trimmed());
+  lastUpdateLbl = new LabelControl("التحقق من آخر تحديث", "", "آخر مرة نجح فيها برنامج القائد الآلي في التحقق من وجود تحديث. يعمل المحدث فقط أثناء إيقاف تشغيل السيارة.");
+  updateBtn = new ButtonControl("فحص التحديثات", "");
   connect(updateBtn, &ButtonControl::clicked, [=]() {
     if (params.getBool("IsOffroad")) {
       fs_watch->addPath(QString::fromStdString(params.getParamPath("LastUpdateTime")));
       fs_watch->addPath(QString::fromStdString(params.getParamPath("UpdateFailedCount")));
-      updateBtn->setText("CHECKING");
+      updateBtn->setText("فحص");
       updateBtn->setEnabled(false);
     }
     std::system("pkill -1 -f selfdrive.updated");
   });
 
 
-  auto uninstallBtn = new ButtonControl("Uninstall " + getBrand(), "UNINSTALL");
+  auto uninstallBtn = new ButtonControl("الغاء التثبيت " + getBrand(), "الغاء التثبيت");
   connect(uninstallBtn, &ButtonControl::clicked, [&]() {
-    if (ConfirmationDialog::confirm("Are you sure you want to uninstall?", this)) {
+    if (ConfirmationDialog::confirm("هل أنت متأكد أنك تريد إلغاء التثبيت؟", this)) {
       params.putBool("DoUninstall", true);
     }
   });
@@ -314,11 +314,11 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : ListWidget(parent) {
     addItem(w);
   }
 
-  fs_watch = new QFileSystemWatcher(this);
+ fs_watch = new QFileSystemWatcher(this);
   QObject::connect(fs_watch, &QFileSystemWatcher::fileChanged, [=](const QString path) {
     if (path.contains("UpdateFailedCount") && std::atoi(params.get("UpdateFailedCount").c_str()) > 0) {
-      lastUpdateLbl->setText("failed to fetch update");
-      updateBtn->setText("CHECK");
+      lastUpdateLbl->setText("فشل في جلب التحديث");
+      updateBtn->setText("التحقق");
       updateBtn->setEnabled(true);
     } else if (path.contains("LastUpdateTime")) {
       updateLabels();
@@ -339,7 +339,7 @@ void SoftwarePanel::updateLabels() {
 
   versionLbl->setText(getBrandVersion());
   lastUpdateLbl->setText(lastUpdate);
-  updateBtn->setText("CHECK");
+  updateBtn->setText("فحص");
   updateBtn->setEnabled(true);
   gitBranchLbl->setText(QString::fromStdString(params.get("GitBranch")));
   gitCommitLbl->setText(QString::fromStdString(params.get("GitCommit")).left(10));
@@ -354,15 +354,15 @@ C2NetworkPanel::C2NetworkPanel(QWidget *parent) : QWidget(parent) {
   list->setSpacing(30);
   // wifi + tethering buttons
 #ifdef QCOM
-  auto wifiBtn = new ButtonControl("Wi-Fi Settings", "OPEN");
+  auto wifiBtn = new ButtonControl("اعدادات الواي فاي", "افتح");
   QObject::connect(wifiBtn, &ButtonControl::clicked, [=]() { HardwareEon::launch_wifi(); });
   list->addItem(wifiBtn);
 
-  auto tetheringBtn = new ButtonControl("Tethering Settings", "OPEN");
+  auto tetheringBtn = new ButtonControl("إعدادات الربط", "افتح");
   QObject::connect(tetheringBtn, &ButtonControl::clicked, [=]() { HardwareEon::launch_tethering(); });
   list->addItem(tetheringBtn);
 #endif
-  ipaddress = new LabelControl("IP Address", "");
+  ipaddress = new LabelControl("IP Address", "عنوان الآي بي");
   list->addItem(ipaddress);
 
   // SSH key management
@@ -437,7 +437,7 @@ SettingsWindow::SettingsWindow(QWidget *parent) : QFrame(parent) {
   )");
 
   // close button
-  QPushButton *close_btn = new QPushButton("← Back");
+  QPushButton *close_btn = new QPushButton("← الرجوع");
   close_btn->setStyleSheet(R"(
     QPushButton {
       font-size: 50px;
@@ -465,17 +465,17 @@ SettingsWindow::SettingsWindow(QWidget *parent) : QFrame(parent) {
   QObject::connect(device, &DevicePanel::showDriverView, this, &SettingsWindow::showDriverView);
   QObject::connect(device, &DevicePanel::closeSettings, this, &SettingsWindow::closeSettings);
 
-  QList<QPair<QString, QWidget *>> panels = {
-    {"Device", device},
-    {"Network", network_panel(this)},
-    {"Toggles", new TogglesPanel(this)},
-    {"Software", new SoftwarePanel(this)},
-    {"Community", new CommunityPanel(this)},
+   QList<QPair<QString, QWidget *>> panels = {
+    {"الجهاز", device},
+    {"الشبكة", network_panel(this)},
+    {"الخيارات", new TogglesPanel(this)},
+    {"البرنامج", new SoftwarePanel(this)},
+    {"التطوير", new CommunityPanel(this)},
   };
 
 #ifdef ENABLE_MAPS
   auto map_panel = new MapPanel(this);
-  panels.push_back({"Navigation", map_panel});
+  panels.push_back({"الملاحة", map_panel});
   QObject::connect(map_panel, &MapPanel::closeSettings, this, &SettingsWindow::closeSettings);
 #endif
 
@@ -637,90 +637,90 @@ CommunityPanel::CommunityPanel(QWidget* parent) : QWidget(parent) {
   QList<ParamControl*> toggles;
 
   toggles.append(new ParamControl("UseClusterSpeed",
-                                            "Use Cluster Speed",
-                                            "Use cluster speed instead of wheel speed.",
+                                            "استخدام سرعة العداد (CAR_SPEED)",
+                                            "استخدم سرعة المركبة بدلاً من سرعة العجلة.",
                                             "../assets/offroad/icon_road.png",
                                             this));
 
   toggles.append(new ParamControl("LongControlEnabled",
-                                            "Enable HKG Long Control",
-                                            "warnings: it is beta, be careful!! Openpilot will control the speed of your car",
+                                            "تفعيل المتحكم الطويل (LONG_CONTROL)",
+                                            "تحذيرات: إنه تجربي كن حذرا !! سوف يتحكم برنامج القائد الآلي في سرعة سيارتك",
                                             "../assets/offroad/icon_road.png",
                                             this));
 
   toggles.append(new ParamControl("MadModeEnabled",
-                                            "Enable HKG MAD mode",
-                                            "Openpilot will engage when turn cruise control on",
+                                            "تفعيل وضع ماد مود (MAD_MODE)",
+                                            "سوف يشتغل القائد الآلي عند تشغيل مثبت السرعة",
                                             "../assets/offroad/icon_openpilot.png",
                                             this));
 
   toggles.append(new ParamControl("IsLdwsCar",
-                                            "LDWS",
-                                            "If your car only supports LDWS, turn it on.",
+                                            "نظام التحذير من الخروج عن المسار (LDWS)",
+                                            "إذا كانت سيارتك تدعم نظام التحذير من الخروج عن المسار فقط ، فقم بتشغيله (Lane Departure Warning System).",
                                             "../assets/offroad/icon_openpilot.png",
                                             this));
 
   toggles.append(new ParamControl("LaneChangeEnabled",
-                                            "Enable Lane Change Assist",
-                                            "Perform assisted lane changes with openpilot by checking your surroundings for safety, activating the turn signal and gently nudging the steering wheel towards your desired lane. openpilot is not capable of checking if a lane change is safe. You must continuously observe your surroundings to use this feature.",
+                                           "تفعيل نظام تغيير المسار (LCA)",
+                                            "قم بإجراء تغييرات على الحارة بمساعدة القائد الآلي عن طريق فحص ما يحيط بك من أجل السلامة ، وتفعيل إشارة الانعطاف ودفع عجلة القيادة برفق نحو الحارة المرغوبة. برنامج القائد الآلي غير قادر على التحقق مما إذا كان تغيير المسار آمنًا. يجب عليك مراقبة محيطك باستمرار لاستخدام هذه الميزة (Lane Change Assist).",
                                             "../assets/offroad/icon_road.png",
                                             this));
 
   toggles.append(new ParamControl("AutoLaneChangeEnabled",
-                                            "Enable Auto Lane Change(Nudgeless)",
-                                            "warnings: it is beta, be careful!!",
+                                            "تفعيل نظام تغيير المسار (Auto_LCA) ",
+                                            "تحذيرات: إنه تجربي كن حذرا !! (Auto Lane Change Assist)",
                                             "../assets/offroad/icon_road.png",
                                             this));
 
   toggles.append(new ParamControl("SccSmootherSlowOnCurves",
-                                            "Enable Slow On Curves",
-                                            "",
+                                           "تفعيل التهدئة عند المنعطفات (HACS)",
+                                            "يقوم بإبطاء المركبة قبل المعطفات ليعطي ثبات أفضل (Highway Auto Curve Slowdown)",
                                             "../assets/offroad/icon_road.png",
                                             this));
 
   toggles.append(new ParamControl("SccSmootherSyncGasPressed",
-                                            "Sync set speed on gas pressed",
-                                            "",
+                                            "تفعيل السرعة من دواسة الوقود",
+                                            "تستطيع الوصول إلى الرعة المطلوبة عن طريق دواسة الوقود",
                                             "../assets/offroad/icon_road.png",
                                             this));
 
   toggles.append(new ParamControl("StockNaviDecelEnabled",
-                                            "Stock Navi based deceleration",
-                                            "Use the stock navi based deceleration for longcontrol",
+                                            "ربط السرعة عن طريق الأقمار الإصطناعية",
+                                            "استخدم التباطؤ القائم على نظام الملاحة للتحكم طويل المدى",
                                             "../assets/offroad/icon_road.png",
                                             this));
 
   toggles.append(new ParamControl("KeepSteeringTurnSignals",
-                                            "Keep steering while turn signals",
+                                         "إبقاء عجلة القيادة أثناء الإنعطاف",
                                             "",
                                             "../assets/offroad/icon_openpilot.png",
                                             this));
   toggles.append(new ParamControl("HapticFeedbackWhenSpeedCamera",
-                                            "Haptic feedback (speed-cam alert)",
-                                            "Haptic feedback when a speed camera is detected",
+                                            "تنبيه إضافي (كاميرا السرعة)",
+                                            "تقوم بخفض السرعة تلقائيا عند اكتشاف كاميرا مراقبة السرعة",
                                             "../assets/offroad/icon_openpilot.png",
                                             this));
 
   /*toggles.append(new ParamControl("NewRadarInterface",
-                                            "Use new radar interface",
+                                           "استخدم واجهة رادار جديدة",
                                             "",
                                             "../assets/offroad/icon_road.png",
                                             this));*/
 
   toggles.append(new ParamControl("DisableOpFcw",
-                                            "Disable Openpilot FCW",
-                                            "",
+                                            "تعطيل نظام التحذير من الإصتدام الأمامي",
+                                            "يقوم بتعطيل نظام التحذير من الاصطدام الأمامي",
                                             "../assets/offroad/icon_shell.png",
                                             this));
 
   toggles.append(new ParamControl("ShowDebugUI",
-                                            "Show Debug UI",
-                                            "",
+                                          "عرض تصحيح الأخطاء و.م",
+                                            "يقوم بتصحيح الأخطائ لواجهة المستخدم",
                                             "../assets/offroad/icon_shell.png",
                                             this));
 
   /*toggles.append(new ParamControl("CustomLeadMark",
-                                            "Use custom lead mark",
+                                         "استخدم علامة الطريق المخصصة",
                                             "",
                                             "../assets/offroad/icon_road.png",
                                             this));*/
@@ -740,7 +740,7 @@ SelectCar::SelectCar(QWidget* parent): QWidget(parent) {
   main_layout->setSpacing(20);
 
   // Back button
-  QPushButton* back = new QPushButton("Back");
+  QPushButton* back = new QPushButton("رجوع");
   back->setObjectName("back_btn");
   back->setFixedSize(500, 100);
   connect(back, &QPushButton::clicked, [=]() { emit backPress(); });
@@ -752,7 +752,7 @@ SelectCar::SelectCar(QWidget* parent): QWidget(parent) {
   QScroller::grabGesture(list->viewport(), QScroller::LeftMouseButtonGesture);
   list->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 
-  list->addItem("[ Not selected ]");
+  list->addItem("[ لم يتم اختياره ]");
 
   QStringList items = get_list("/data/params/d/SupportedCars");
   list->addItems(items);
@@ -790,7 +790,7 @@ LateralControl::LateralControl(QWidget* parent): QWidget(parent) {
   main_layout->setSpacing(20);
 
   // Back button
-  QPushButton* back = new QPushButton("Back");
+  QPushButton* back = new QPushButton("رجوع");
   back->setObjectName("back_btn");
   back->setFixedSize(500, 100);
   connect(back, &QPushButton::clicked, [=]() { emit backPress(); });
