@@ -1,56 +1,56 @@
 {
   "Offroad_ChargeDisabled": {
-    "text": "EON charging disabled after car being off for more than 30 hours. Turn ignition on to start charging again.",
+    "text": "تم تعطيل شحن الايون بعد توقف السيارة لأكثر من 30 ساعة. قم بتشغيل الإشعال لبدء الشحن مرة أخرى.",
     "severity": 0
   },
   "Offroad_TemperatureTooHigh": {
-    "text": "Device temperature too high. System won't start.",
+    "text": "درجة حرارة الجهاز مرتفعة للغاية. لا يمكن تشغيل النظام.",
     "severity": 1
   },
   "Offroad_ConnectivityNeededPrompt": {
-    "text": "Immediately connect to the internet to check for updates. If you do not connect to the internet, openpilot won't engage in ",
+    "text": "اتصل على الفور بالإنترنت للتحقق من وجود تحديثات. إذا لم تتصل بالإنترنت ، فلن يتم تفعيل البرنامج openpilot ",
     "severity": 0,
     "_comment": "Append the number of days at the end of the text"
   },
   "Offroad_ConnectivityNeeded": {
-    "text": "Connect to internet to check for updates. openpilot won't automatically start until it connects to internet to check for updates.",
+    "text": "اتصل بالإنترنت للتحقق من وجود تحديثات. لن يبدأ القائد الآلي العمل حتى يتصل بالإنترنت للتحقق من وجود تحديثات.",
     "severity": 1
   },
   "Offroad_UpdateFailed": {
-    "text": "Unable to download updates\n",
+    "text": "غير قادر على تحميل التحديثات",
     "severity": 1,
-    "_comment": "Append the command and error to the text."
+    "_comment": "هنالك خطاء في الأوامر البرمجية."
   },
   "Offroad_InvalidTime": {
-    "text": "Invalid date and time settings, system won't start. Connect to internet to set time.",
+    "text": "إعدادات التاريخ والوقت غير صالحة ، لن يبدأ النظام. اتصل بالإنترنت لضبط الوقت.",
     "severity": 1
   },
   "Offroad_IsTakingSnapshot": {
-    "text": "Taking camera snapshots. System won't start until finished.",
+    "text": " جاري أخذ لقطات من الكاميرا. لن يبدأ النظام إلا بعد الانتهاء.",
     "severity": 0
   },
   "Offroad_NeosUpdate": {
-    "text": "An update to your device's operating system is downloading in the background. You will be prompted to update when it's ready to install.",
+    "text": "يتم تنزيل تحديث لنظام تشغيل جهازك في الخلفية. سيُطلب منك التحديث عندما يكون جاهزًا للتثبيت.",
     "severity": 0
   },
   "Offroad_UnofficialHardware": {
-    "text": "Device failed to register. It will not connect to or upload to comma.ai servers, and receives no support from comma.ai. If this is an official device, contact support@comma.ai.",
+    "text": "فشل الجهاز في التسجيل. لن يتم الاتصال أو التحميل إلى خوادم comma.ai ، ولا يتلقى أي دعم من comma.ai. إذا كان هذا جهازًا رسميًا ، فاتصل بـ support@comma.ai.",
     "severity": 1
   },
   "Offroad_StorageMissing": {
-    "text": "NVMe drive not mounted.",
+    "text": "ذاكرة NVMe غير مركب.",
     "severity": 1
   },
   "Offroad_BadNvme": {
-    "text": "Unsupported NVMe drive detected. Device may draw significantly more power and overheat due to the unsupported NVMe.",
+    "text": "تم اكتشاف محرك أقراص NVMe غير مدعوم. قد يستهلك الجهاز قدرًا أكبر من الطاقة ويسخن بشكل كبير بسبب NVMe غير المدعوم.",
     "severity": 1
   },
   "Offroad_CarUnrecognized": {
-    "text": "Choose your car in community settings.",
+    "text": "اختر سيارتك المدعومة من المطورين.",
     "severity": 0
   },
   "Offroad_NoFirmware": {
-    "text": "Choose your car in community settings.",
+    "text": "اختر سيارتك المدعومة من المطورين.",
     "severity": 0
   }
 }
