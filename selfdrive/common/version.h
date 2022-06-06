@@ -1,1 +1,1 @@
-#define COMMA_VERSION "0.8.14-النسخة_العربية"
+#define COMMA_VERSION "النسخة_العربية"
