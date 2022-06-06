@@ -201,7 +201,7 @@ if (Hardware::TICI()) {
   power_layout->addWidget(rebuild_btn);
   QObject::connect(rebuild_btn, &QPushButton::clicked, [=]() {
 
-    if (ConfirmationDialog::confirm("Are you sure you want to rebuild?", this)) {
+    if (ConfirmationDialog::confirm("هل أنت متأكد أنك تريد إعادة البناء؟", this)) {
       std::system("cd /data/openpilot && scons -c");
       std::system("rm /data/openpilot/.sconsign.dblite");
       std::system("rm /data/openpilot/prebuilt");
