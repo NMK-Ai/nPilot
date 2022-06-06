@@ -59,7 +59,7 @@ rm -f panda/board/obj/panda.bin.signed
 echo "[-] committing version $VERSION T=$SECONDS"
 git add -f .
 git status
-git commit -a -m "القائد الآلي $VERSION "
+git commit -a -m "openpilot v$VERSION "
 
 if [ ! -z "$PUSH" ]; then
   echo "[-] Pushing to $PUSH T=$SECONDS"
