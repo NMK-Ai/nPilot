@@ -15,9 +15,9 @@ if [ ! -f "/system/fonts/arial.ttf" ]; then
 fi
 
 if [ "$(getprop persist.sys.locale)" != "es-AR" ]; then
-    setprop persist.sys.locale es-AR
-    setprop persist.sys.language es
-    setprop persist.sys.country AR
+    setprop persist.sys.locale en_gb
+    setprop persist.sys.language en
+    setprop persist.sys.country gb
     setprop persist.sys.timezone Asia/Riyadh
 
     sleep 2
