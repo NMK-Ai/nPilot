@@ -49,7 +49,7 @@ echo "#define COMMA_VERSION \"$VERSION-release\"" > selfdrive/common/version.h
 
 echo "[-] committing version $VERSION T=$SECONDS"
 git add -f .
-git commit -a -m "القائد الآلي $VERSION "
+git commit -a -m "openpilot v$VERSION "
 git branch --set-upstream-to=origin/$RELEASE_BRANCH
 
 # Build panda firmware
@@ -93,7 +93,7 @@ touch prebuilt
 
 # Add built files to git
 git add -f .
-git commit --amend -m "القائد الآلي $VERSION"
+git commit --amend -m "openpilot v$VERSION"
 
 # Run tests
 TEST_FILES="tools/"
