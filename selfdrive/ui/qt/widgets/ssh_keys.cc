@@ -4,16 +4,16 @@
 #include "selfdrive/ui/qt/api.h"
 #include "selfdrive/ui/qt/widgets/input.h"
 
-SshControl::SshControl() : ButtonControl("SSH Keys", "", "Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.") {
+SshControl::SshControl() : ButtonControl("SSH مفتاح", "", "تحذير: هذا يمنح SSH الوصول إلى جميع المفاتيح العامة في إعدادات جت هب. لا تدخل أبدًا اسم مستخدم جت هب بخلاف اسم المستخدم الخاص بك. لن يطلب منك موظف كوما أبدًا إضافة اسم مستخدم GitHub الخاص به.") {
   username_label.setAlignment(Qt::AlignRight | Qt::AlignVCenter);
   username_label.setStyleSheet("color: #aaaaaa");
   hlayout->insertWidget(1, &username_label);
 
   QObject::connect(this, &ButtonControl::clicked, [=]() {
-    if (text() == "ADD") {
-      QString username = InputDialog::getText("Enter your GitHub username", this);
+    if (text() == "اضف") {
+      QString username = InputDialog::getText("أدخل اسم مستخدم جت هب الخاص بك", this);
       if (username.length() > 0) {
-        setText("LOADING");
+        setText("انتظر");
         setEnabled(false);
         getUserKeys(username);
       }
@@ -31,10 +31,10 @@ void SshControl::refresh() {
   QString param = QString::fromStdString(params.get("GithubSshKeys"));
   if (param.length()) {
     username_label.setText(QString::fromStdString(params.get("GithubUsername")));
-    setText("REMOVE");
+    setText("حذف");
   } else {
     username_label.setText("");
-    setText("ADD");
+    setText("اضف");
   }
   setEnabled(true);
 }
