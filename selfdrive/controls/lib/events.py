@@ -170,7 +170,7 @@ class ImmediateDisableAlert(Alert):
 
 class EngagementAlert(Alert):
   def __init__(self, audible_alert: car.CarControl.HUDControl.AudibleAlert):
-    super().__init__("", "",
+    super().__init__("جاري الاتصال ب911", "",
                      AlertStatus.normal, AlertSize.none,
                      Priority.MID, VisualAlert.none,
                      audible_alert, .2),
@@ -193,7 +193,7 @@ class StartupAlert(Alert):
 # ********** helper functions **********
 def get_display_speed(speed_ms: float, metric: bool) -> str:
   speed = int(round(speed_ms * (CV.MS_TO_KPH if metric else CV.MS_TO_MPH)))
-  unit = 'km/h' if metric else 'mph'
+  unit = 'كلم/س' if metric else 'ميل'
   return f"{speed} {unit}"
 
 
@@ -229,7 +229,7 @@ def below_engage_speed_alert(CP: car.CarParams, sm: messaging.SubMaster, metric:
 
 def below_steer_speed_alert(CP: car.CarParams, sm: messaging.SubMaster, metric: bool, soft_disable_time: int) -> Alert:
   return Alert(
-    f"التوجيه غير متوفر أدناهر {get_display_speed(CP.minSteerSpeed, metric)}",
+    f"التوجيه غير متوفر أدناه {get_display_speed(CP.minSteerSpeed, metric)}",
     "",
     AlertStatus.userPrompt, AlertSize.small,
     Priority.MID, VisualAlert.steerRequired, AudibleAlert.prompt, 0.4)
@@ -344,7 +344,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
       "نظام فرماة الطوارئ: خطر الاصطدام",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.fcw, AudibleAlert.none, 2.),
-    ET.NO_ENTRY: NoEntryAlert("Stock AEB: Risk of Collision"),
+    ET.NO_ENTRY: NoEntryAlert("نظام فرملة الطوارئ: خطر الاصطدام"),
   },
 
   EventName.fcw: {
@@ -556,7 +556,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
 
   EventName.pedalPressedPreEnable: {
     ET.PRE_ENABLE: Alert(
-      "Release Pedal to Engage",
+      "حرر الدواسة للتفعيل",
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOWEST, VisualAlert.none, AudibleAlert.none, .1, creation_delay=1.),
@@ -836,7 +836,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
       "لا توجد قيادة قريبة للمركب",
       AlertStatus.normal, AlertSize.mid,
       Priority.HIGH, VisualAlert.none, AudibleAlert.disengage, 3.),
-    ET.NO_ENTRY: NoEntryAlert("No Close Lead Car"),
+    ET.NO_ENTRY: NoEntryAlert("لا توجد قيادة قريبة للمركب"),
   },
 
   EventName.speedTooLow: {
