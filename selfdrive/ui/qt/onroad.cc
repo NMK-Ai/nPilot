@@ -577,7 +577,7 @@ void NvgWindow::drawBottomIcons(QPainter &p) {
   QColor textColor = QColor(255, 255, 255, 200);
 
   if(gap <= 0) {
-    str = "N/A";
+    str = "غير معروف";
   }
   else if(longControl && gap == autoTrGap) {
     str = "AUTO";
