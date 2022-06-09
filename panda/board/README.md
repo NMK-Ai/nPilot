@@ -1,24 +1,24 @@
 Dependencies
 --------
 
-**Mac**
+**ماك**
 
 ```
 xcode-select --install
 ./get_sdk_mac.sh
 ```
 
-**Debian / Ubuntu**
+**دبيان / يوبينتو**
 
 ```
 ./get_sdk.sh
 ```
 
 
-Programming
+برمجة
 ----
 
-**Panda**
+**الباندا**
 
 ```
 scons -u -j$(nproc)  # Compile
@@ -26,16 +26,16 @@ scons -u -j$(nproc)  # Compile
 ./flash.sh           # for other pandas
 ```
 
-Troubleshooting
+استكشاف الأخطاء وإصلاحها
 ----
 
-If your panda will not flash and is quickly blinking a single Green LED, use:
+إذا لم تومض الباندا الخاصة بك وتومض بسرعة بمؤشر LED باللون الأخضر ، فاستخدم:
 ```
 ./recover_h7.sh  # for red panda
 ./recover.sh     # for other pandas
 ```
 
-A [panda paw](https://comma.ai/shop/products/panda-paw) can be used to put panda into DFU mode.
+إعادة برمجة الباندا(https://comma.ai/shop/products/panda-paw) يمكن استخدامها لوضع الباندا في وضع DFU.
 
 
-[dfu-util](http://github.com/dsigma/dfu-util.git) for flashing
+[إدخل على الرابط](http://github.com/dsigma/dfu-util.git) لإعادة تنزيل البرنامج
