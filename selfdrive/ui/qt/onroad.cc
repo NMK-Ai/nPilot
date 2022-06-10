@@ -653,15 +653,15 @@ void NvgWindow::drawMaxSpeed(QPainter &p) {
   } else {
     if(long_control) {
       configFont(p, "Open Sans", 48, "sans-semibold");
-      drawText(p, rc.center().x(), 100, "OP", 100);
+      drawText(p, rc.center().x(), 100, "الدودة", 100);
     }
     else {
       configFont(p, "Open Sans", 48, "sans-semibold");
-      drawText(p, rc.center().x(), 100, "MAX", 100);
+      drawText(p, rc.center().x(), 100, "القصوى", 100);
     }
 
     configFont(p, "Open Sans", 76, "sans-semibold");
-    drawText(p, rc.center().x(), 195, "N/A", 100);
+    drawText(p, rc.center().x(), 195, "غير معروف", 100);
   }
 }
 
@@ -794,7 +794,7 @@ void NvgWindow::drawSpeedLimit(QPainter &p) {
 
       configFont(p, "Open Sans", 70, "Bold");
       p.setPen(QColor(0, 0, 0, 230));
-      p.drawText(rect, Qt::AlignCenter, "CAM");
+      p.drawText(rect, Qt::AlignCenter, "الكاميرا");
     }
   }
 }
@@ -902,7 +902,7 @@ void NvgWindow::drawThermal(QPainter &p) {
   configFont(p, "Open Sans", 25, "Bold");
   rect = QRect(x, y, w, w);
   p.setPen(QColor(255, 255, 255, 200));
-  p.drawText(rect, Qt::AlignCenter, "CPU");
+  p.drawText(rect, Qt::AlignCenter, "المعالج");
 
   y += 80;
   configFont(p, "Open Sans", 50, "Bold");
@@ -917,7 +917,7 @@ void NvgWindow::drawThermal(QPainter &p) {
   configFont(p, "Open Sans", 25, "Bold");
   rect = QRect(x, y, w, w);
   p.setPen(QColor(255, 255, 255, 200));
-  p.drawText(rect, Qt::AlignCenter, "AMBIENT");
+  p.drawText(rect, Qt::AlignCenter, "درجة الحرارة الخارجية");
 
   p.restore();
 }
