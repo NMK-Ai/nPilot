@@ -661,7 +661,7 @@ void NvgWindow::drawMaxSpeed(QPainter &p) {
     }
 
     configFont(p, "Open Sans", 76, "sans-semibold");
-    drawText(p, rc.center().x(), 195, "غير معروف", 100);
+    drawText(p, rc.center().x(), 195, "غ/م", 100);
   }
 }
 
@@ -917,7 +917,7 @@ void NvgWindow::drawThermal(QPainter &p) {
   configFont(p, "Open Sans", 25, "Bold");
   rect = QRect(x, y, w, w);
   p.setPen(QColor(255, 255, 255, 200));
-  p.drawText(rect, Qt::AlignCenter, "درجة الحرارة الخارجية");
+  p.drawText(rect, Qt::AlignCenter, "الحرارة الخارجية");
 
   p.restore();
 }
