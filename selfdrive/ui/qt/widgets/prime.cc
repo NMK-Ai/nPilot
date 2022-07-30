@@ -198,7 +198,7 @@ PrimeAdWidget::PrimeAdWidget(QWidget* parent) : QFrame(parent) {
   main_layout->addWidget(features, 0, Qt::AlignBottom);
   main_layout->addSpacing(30);
 
-  QVector<QString> bullets = {"نظام تغيير المسار", "نظام القيادة وسط الازدحام", "نظام تتبع المركبات"};
+  QVector<QString> bullets = {"نظام تغيير المسار", "نظام القيادة وسط الازدحام", "نظام مراقبة السائق"};
   for (auto &b: bullets) {
     const QString check = "<b><font color='#465BEA'>✓</font></b> ";
     QLabel *l = new QLabel(check + b);
