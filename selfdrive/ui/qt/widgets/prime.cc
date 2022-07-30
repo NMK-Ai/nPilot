@@ -181,19 +181,19 @@ PrimeAdWidget::PrimeAdWidget(QWidget* parent) : QFrame(parent) {
   main_layout->setContentsMargins(80, 90, 80, 60);
   main_layout->setSpacing(0);
 
-  QLabel *upgrade = new QLabel("ترقية أنظمة المركبة");
+  QLabel *upgrade = new QLabel("ترقية الأنظمة ");
   upgrade->setStyleSheet("font-size: 75px; font-weight: bold;");
   main_layout->addWidget(upgrade, 0, Qt::AlignTop);
   main_layout->addSpacing(50);
 
-  QLabel *description = new QLabel("رقع مستوى القيادة بنظام");
+  QLabel *description = new QLabel("رفع مستوى القيادة بنظام");
   description->setStyleSheet("font-size: 60px; font-weight: light; color: white;");
   description->setWordWrap(true);
   main_layout->addWidget(description, 0, Qt::AlignTop);
 
   main_layout->addStretch();
 
-  QLabel *features = new QLabel("HDA:II");
+  QLabel *features = new QLabel("Highway Driving Assist 2");
   features->setStyleSheet("font-size: 41px; font-weight: bold; color: #E5E5E5;");
   main_layout->addWidget(features, 0, Qt::AlignBottom);
   main_layout->addSpacing(30);
